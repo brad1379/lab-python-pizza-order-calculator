@@ -34,7 +34,10 @@ else:
     print("That's an invalid input please try again.")
 
 # Calculate cost of toppings
-cost_of_toppings = num_toppings * 1 # $1 per topping
+if num_toppings == 0:
+    cost_of_toppings = 0
+else:
+    cost_of_toppings = num_toppings * 1 # $1 per topping
 
 # Calculate delivery fee
 if delivery_distance == 0:
