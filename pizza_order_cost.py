@@ -37,7 +37,9 @@ else:
 cost_of_toppings = num_toppings * 1 # $1 per topping
 
 # Calculate delivery fee
-if delivery_distance <= 5:
+if delivery_distance == 0:
+    delivery_fee = 0 # Ordering for pickup. No delivery fee
+elif delivery_distance > 0 and delivery_distance <= 5:
     delivery_fee = 2 # $2 for first 5 miles
 else:
     delivery_fee = 2 + ((delivery_distance - 5) * 1) # $1 for each additional mile after 5
